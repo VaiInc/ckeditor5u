@@ -31,7 +31,9 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
-
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed';
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
@@ -40,6 +42,7 @@ ClassicEditor.builtinPlugins = [
 	UploadAdapter,
 	Autoformat,
 	Bold,
+	Highlight,
 	Italic,
 	BlockQuote,
 	CKFinder,
@@ -60,50 +63,38 @@ ClassicEditor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	TextTransformation,
-	Alignment
+	Alignment,
+	Highlight,
+	Font,
+	HtmlEmbed
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
-			'alignment',
+
 			'heading',
 			'|',
 			'bold',
 			'italic',
 			'link',
+			'htmlEmbed',
+			'fontSize', 'fontFamily', 'fontColor','fontBackgroundColor',
+			'alignment',
+			'highlight',
 			'bulletedList',
 			'numberedList',
 			'|',
 			'outdent',
 			'indent',
 			'|',
-			'uploadImage',
 			'blockQuote',
-			'insertTable',
-			'mediaEmbed',
 			'undo',
 			'redo'
 		]
 	},
-	image: {
-		toolbar: [
-			'imageStyle:inline',
-			'imageStyle:block',
-			'imageStyle:side',
-			'|',
-			'toggleImageCaption',
-			'imageTextAlternative'
-		]
-	},
-	table: {
-		contentToolbar: [
-			'tableColumn',
-			'tableRow',
-			'mergeTableCells'
-		]
-	},
+
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
 };
