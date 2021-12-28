@@ -34,7 +34,40 @@ import Font from '@ckeditor/ckeditor5-font/src/font';
 import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
+import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
 export default class ClassicEditor extends ClassicEditorBase {}
+
+
+const customColorPalette = [
+	{
+		color: 'hsl(4, 90%, 58%)',
+		label: 'Red'
+	},
+	{
+		color: 'hsl(340, 82%, 52%)',
+		label: 'Pink'
+	},
+	{
+		color: 'hsl(291, 64%, 42%)',
+		label: 'Purple'
+	},
+	{
+		color: 'hsl(262, 52%, 47%)',
+		label: 'Deep Purple'
+	},
+	{
+		color: 'hsl(231, 48%, 48%)',
+		label: 'Indigo'
+	},
+	{
+		color: 'hsl(207, 90%, 54%)',
+		label: 'Blue'
+	},
+
+	// ...
+];
+
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
@@ -67,6 +100,8 @@ ClassicEditor.builtinPlugins = [
 	Highlight,
 	Font,
 	HtmlEmbed,
+	Image, ImageToolbar, ImageCaption, ImageStyle,
+	TableToolbar, TableProperties, TableCellProperties
 ];
 
 // Editor configuration.
@@ -95,7 +130,23 @@ ClassicEditor.defaultConfig = {
 			'redo'
 		],
 		table: {
-			contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
+			contentToolbar:  [
+				'tableColumn', 'tableRow', 'mergeTableCells',
+				'tableProperties', 'tableCellProperties'
+			],
+			tableProperties: {
+				borderColors: customColorPalette,
+				backgroundColors: customColorPalette
+			},
+
+			// Set the palettes for table cells.
+			tableCellProperties: {
+				borderColors: customColorPalette,
+				backgroundColors: customColorPalette
+			}
+		},
+		image: {
+			toolbar: [ 'imageTextAlternative', '|', 'imageStyle:full', 'imageStyle:side' ]
 		}
 	},
 

@@ -1,0 +1,114 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add syedahsansayone/ckeditor5#stable
+
+PATH: 
+  D:\backend\ckds\ckeditor5\node_modules\.bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\huxxn\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\MongoDB\Server\5.0\bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Users\huxxn\.windows-build-tools\python27\;C:\Users\huxxn\AppData\Local\Microsoft\WindowsApps;C:\Users\huxxn\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\huxxn\AppData\Local\Programs\Microsoft VS Code\bin;C:\MinGW\bin;
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.15.5
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Invariant Violation: expected workspace package to exist for "@ckeditor/ckeditor5-dev-utils"
+      at invariant (C:\Users\huxxn\AppData\Roaming\nvm\v14.15.5\node_modules\yarn\lib\cli.js:2314:15)
+      at _loop2 (C:\Users\huxxn\AppData\Roaming\nvm\v14.15.5\node_modules\yarn\lib\cli.js:94537:9)
+      at PackageHoister.init (C:\Users\huxxn\AppData\Roaming\nvm\v14.15.5\node_modules\yarn\lib\cli.js:94596:19)
+      at PackageLinker.getFlatHoistedTree (C:\Users\huxxn\AppData\Roaming\nvm\v14.15.5\node_modules\yarn\lib\cli.js:48744:20)
+      at PackageLinker.<anonymous> (C:\Users\huxxn\AppData\Roaming\nvm\v14.15.5\node_modules\yarn\lib\cli.js:48755:27)
+      at Generator.next (<anonymous>)
+      at step (C:\Users\huxxn\AppData\Roaming\nvm\v14.15.5\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\huxxn\AppData\Roaming\nvm\v14.15.5\node_modules\yarn\lib\cli.js:328:14
+      at new Promise (<anonymous>)
+      at new F (C:\Users\huxxn\AppData\Roaming\nvm\v14.15.5\node_modules\yarn\lib\cli.js:5301:28)
+
+npm manifest: 
+  {
+    "name": "@ckeditor/ckeditor5-build-classic",
+    "version": "31.1.0",
+    "description": "The classic editor build of CKEditor 5 – the best browser-based rich text editor.",
+    "keywords": [
+      "ckeditor5-build",
+      "ckeditor",
+      "ckeditor5",
+      "ckeditor 5",
+      "wysiwyg",
+      "rich text",
+      "editor",
+      "html",
+      "contentEditable",
+      "editing",
+      "operational transformation",
+      "ot",
+      "collaboration",
+      "collaborative",
+      "real-time",
+      "framework"
+    ],
+    "main": "./build/ckeditor.js",
+    "files": [
+      "build",
+      "ckeditor5-metadata.json"
+    ],
+    "dependencies": {
+      "@ckeditor/ckeditor5-adapter-ckfinder": "^31.1.0",
+      "@ckeditor/ckeditor5-autoformat": "^31.1.0",
+      "@ckeditor/ckeditor5-basic-styles": "^31.1.0",
+      "@ckeditor/ckeditor5-block-quote": "^31.1.0",
+      "@ckeditor/ckeditor5-ckfinder": "^31.1.0",
+      "@ckeditor/ckeditor5-cloud-services": "^31.1.0",
+      "@ckeditor/ckeditor5-easy-image": "^31.1.0",
+      "@ckeditor/ckeditor5-editor-classic": "^31.1.0",
+      "@ckeditor/ckeditor5-essentials": "^31.1.0",
+      "@ckeditor/ckeditor5-heading": "^31.1.0",
+      "@ckeditor/ckeditor5-image": "^31.1.0",
+      "@ckeditor/ckeditor5-indent": "^31.1.0",
+      "@ckeditor/ckeditor5-link": "^31.1.0",
+      "@ckeditor/ckeditor5-list": "^31.1.0",
+      "@ckeditor/ckeditor5-media-embed": "^31.1.0",
+      "@ckeditor/ckeditor5-paragraph": "^31.1.0",
+      "@ckeditor/ckeditor5-paste-from-office": "^31.1.0",
+      "@ckeditor/ckeditor5-table": "^31.1.0",
+      "@ckeditor/ckeditor5-typing": "^31.1.0"
+    },
+    "devDependencies": {
+      "@ckeditor/ckeditor5-alignment": "^31.1.0",
+      "@ckeditor/ckeditor5-core": "^31.1.0",
+      "@ckeditor/ckeditor5-dev-utils": "^27.0.0",
+      "@ckeditor/ckeditor5-dev-webpack-plugin": "^27.0.0",
+      "@ckeditor/ckeditor5-theme-lark": "^31.1.0",
+      "postcss-loader": "^3.0.0",
+      "raw-loader": "^4.0.1",
+      "style-loader": "^1.2.1",
+      "terser-webpack-plugin": "^3.0.2",
+      "webpack": "^4.43.0",
+      "webpack-cli": "^3.3.11"
+    },
+    "engines": {
+      "node": ">=12.0.0",
+      "npm": ">=5.7.1"
+    },
+    "author": "CKSource (http://cksource.com/)",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://ckeditor.com/ckeditor-5",
+    "bugs": "https://github.com/ckeditor/ckeditor5/issues",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ckeditor/ckeditor5.git",
+      "directory": "packages/ckeditor5-build-classic"
+    },
+    "scripts": {
+      "build": "webpack --mode production",
+      "preversion": "npm run build"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
