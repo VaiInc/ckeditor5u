@@ -19,6 +19,7 @@ import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize'
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
@@ -38,34 +39,6 @@ import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperti
 export default class ClassicEditor extends ClassicEditorBase {}
 
 
-const customColorPalette = [
-	{
-		color: 'hsl(4, 90%, 58%)',
-		label: 'Red'
-	},
-	{
-		color: 'hsl(340, 82%, 52%)',
-		label: 'Pink'
-	},
-	{
-		color: 'hsl(291, 64%, 42%)',
-		label: 'Purple'
-	},
-	{
-		color: 'hsl(262, 52%, 47%)',
-		label: 'Deep Purple'
-	},
-	{
-		color: 'hsl(231, 48%, 48%)',
-		label: 'Indigo'
-	},
-	{
-		color: 'hsl(207, 90%, 54%)',
-		label: 'Blue'
-	},
-
-	// ...
-];
 
 
 // Plugins to include in the build.
@@ -81,7 +54,7 @@ ClassicEditor.builtinPlugins = [
 	CloudServices,
 	EasyImage,
 	Heading,
-	ImageToolbar, ImageCaption, ImageStyle,
+	Image, ImageToolbar, ImageCaption, ImageStyle, ImageResize,
 	Indent,
 	Link,
 	List,
@@ -110,7 +83,6 @@ ClassicEditor.defaultConfig = {
 			'italic',
 			'link',
 			'htmlEmbed',
-			'image',
 			'insertTable',
 			'fontSize', 'fontFamily', 'fontColor','fontBackgroundColor',
 			'alignment',
@@ -125,26 +97,16 @@ ClassicEditor.defaultConfig = {
 			'undo',
 			'redo'
 		],
-		image: {
-			toolbar: [ 'imageTextAlternative', '|', 'imageStyle:full', 'imageStyle:side' ]
-		},
 		table: {
 			contentToolbar:  [
 				'tableColumn', 'tableRow', 'mergeTableCells',
 				'tableProperties', 'tableCellProperties'
 			],
-			tableProperties: {
-				borderColors: customColorPalette,
-				backgroundColors: customColorPalette
-			},
 
-			// Set the palettes for table cells.
-			tableCellProperties: {
-				borderColors: customColorPalette,
-				backgroundColors: customColorPalette
-			}
 		},
-
+		image: {
+			toolbar: [ 'imageTextAlternative', '|', 'imageStyle:full', 'imageStyle:side' ]
+		}
 	},
 
 	// This value must be kept in sync with the language defined in webpack.config.js.
