@@ -69,7 +69,7 @@ ClassicEditor.builtinPlugins = [
 	Font,
 	HtmlEmbed,
 	Image, ImageToolbar, ImageCaption, ImageStyle,
-	TableToolbar, TableProperties, TableCellProperties
+
 ];
 
 // Editor configuration.
@@ -98,11 +98,7 @@ ClassicEditor.defaultConfig = {
 			'redo'
 		],
 		table: {
-			contentToolbar:  [
-				'tableColumn', 'tableRow', 'mergeTableCells',
-				'tableProperties', 'tableCellProperties'
-			],
-
+			contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
 		},
 		image: {
 			toolbar: [ 'imageTextAlternative', '|', 'imageStyle:full', 'imageStyle:side' ]
