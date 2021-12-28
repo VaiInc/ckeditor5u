@@ -49,7 +49,7 @@ ClassicEditor.builtinPlugins = [
 	CloudServices,
 	EasyImage,
 	Heading,
-	Image, ImageToolbar, ImageCaption, ImageStyle, ImageResize,
+	Image,
 	Indent,
 	Link,
 	List,
@@ -76,6 +76,8 @@ ClassicEditor.defaultConfig = {
 			'italic',
 			'link',
 			'htmlEmbed',
+			'image',
+			'easyImage',
 			'insertTable',
 			'fontSize', 'fontFamily', 'fontColor','fontBackgroundColor',
 			'alignment',
@@ -93,9 +95,7 @@ ClassicEditor.defaultConfig = {
 		table: {
 			contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
 		},
-		image: {
-			toolbar: [ 'imageTextAlternative', '|', 'imageStyle:full', 'imageStyle:side' ]
-		}
+
 	},
 
 	// This value must be kept in sync with the language defined in webpack.config.js.
