@@ -80,7 +80,6 @@ ClassicEditor.defaultConfig = {
 			'italic',
 			'link',
 			'htmlEmbed',
-			'uploadImage',
 			'fontSize', 'fontFamily', 'fontColor','fontBackgroundColor',
 			'alignment',
 			'highlight',
