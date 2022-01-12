@@ -66,24 +66,26 @@ ClassicEditor.builtinPlugins = [
 	Alignment,
 	Highlight,
 	Font,
-	HtmlEmbed
+	HtmlEmbed,
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	alignment: {
-		options: [ 'center', 'left', 'right', 'justify' ]
+		options: ['center', 'left', 'right', 'justify'],
 	},
 	toolbar: {
 		items: [
-
 			'heading',
 			'|',
 			'bold',
 			'italic',
 			'link',
 			'htmlEmbed',
-			'fontSize', 'fontFamily', 'fontColor','fontBackgroundColor',
+			'fontSize',
+			'fontFamily',
+			'fontColor',
+			'fontBackgroundColor',
 			'alignment',
 			'highlight',
 			'bulletedList',
@@ -94,13 +96,13 @@ ClassicEditor.defaultConfig = {
 			'|',
 			'blockQuote',
 			'undo',
-			'redo'
-		]
+			'redo',
+		],
 	},
 
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'en',
 };
-ClassicEditor.defaultConfig = function( config ) {
+ClassicEditor.editorConfig = function (config) {
 	config.contentsLangDirection = 'rtl';
 };
