@@ -71,6 +71,9 @@ ClassicEditor.builtinPlugins = [
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
+	alignment: {
+		options: [ 'center', 'left', 'right', 'justify' ]
+	},
 	toolbar: {
 		items: [
 
@@ -98,4 +101,6 @@ ClassicEditor.defaultConfig = {
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
 };
-
+ClassicEditor.defaultConfig = function( config ) {
+	config.contentsLangDirection = 'rtl';
+};
