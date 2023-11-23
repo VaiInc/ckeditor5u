@@ -20,6 +20,7 @@ import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
+import PictureEditing from '@ckeditor/ckeditor5-image/src/pictureediting';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
@@ -34,6 +35,9 @@ import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
 import Font from '@ckeditor/ckeditor5-font/src/font';
 import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed';
+import AutoImage from '@ckeditor/ckeditor5-image/src/autoimage';
+import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
@@ -67,6 +71,10 @@ ClassicEditor.builtinPlugins = [
 	Highlight,
 	Font,
 	HtmlEmbed,
+	AutoImage,
+	ImageInsert,
+	PictureEditing,
+	ImageResize,
 ];
 
 // Editor configuration.
@@ -76,28 +84,49 @@ ClassicEditor.defaultConfig = {
 	},
 	toolbar: {
 		items: [
+			'undo',
+			'redo',
+			'|',
 			'heading',
 			'|',
 			'bold',
 			'italic',
-			'link',
-			'htmlEmbed',
 			'fontSize',
 			'fontFamily',
 			'fontColor',
 			'fontBackgroundColor',
-			'alignment',
+			'strikethrough',
+			'code',
 			'highlight',
+			'alignment',
+			'|',
+			'link',
+			// 'uploadImage',
+			'insertImage',
+			'insertTable',
+			'blockQuote',
+			'mediaEmbed',
+			'|',
 			'bulletedList',
 			'numberedList',
-			'|',
 			'outdent',
 			'indent',
-			'|',
-			'blockQuote',
-			'undo',
-			'redo',
+
+			'htmlEmbed',
 		],
+	},
+	image: {
+		toolbar: [
+			'imageStyle:inline',
+			'imageStyle:block',
+			'imageStyle:side',
+			'|',
+			'toggleImageCaption',
+			'imageTextAlternative',
+		],
+	},
+	table: {
+		contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
 	},
 
 	// This value must be kept in sync with the language defined in webpack.config.js.
